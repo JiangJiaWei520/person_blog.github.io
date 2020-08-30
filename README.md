@@ -1,4 +1,4 @@
-## Hexo 主题 yilia-plus
+## 本博客使用的视Hexo 主题 yilia-plus
 
 ## 开始使用
 
