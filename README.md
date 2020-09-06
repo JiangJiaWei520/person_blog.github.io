@@ -509,3 +509,97 @@ hexo clean
   ```
 
 - **md中存在<title>标签时《所有文章》功能主页时不生效，模板开发者暂未解决【待解决】**
+
+- **插入网站运行时间代码**
+
+  ```
+  样例 1:
+  <span>
+  本站已运行
+  </span>
+  <span id="span_dt_dt">
+  </span>
+  <script>
+  /*建站时间*/
+  function show_date_time() {
+  window.setTimeout("show_date_time()", 1e3);
+  var BirthDay = new Date("2018/03/01"),
+  today = new Date,
+  timeold = today.getTime() - BirthDay.getTime(),
+  msPerDay = 864e5,
+  e_daysold = timeold / msPerDay,
+  daysold = Math.floor(e_daysold),
+  e_hrsold = 24 * (e_daysold - daysold),
+  hrsold = Math.floor(e_hrsold),
+  e_minsold = 60 * (e_hrsold - hrsold),
+  minsold = Math.floor(60 * (e_hrsold - hrsold)),
+  seconds = Math.floor(60 * (e_minsold - minsold));
+  span_dt_dt.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+  }
+  show_date_time();
+  </script>
+  ```
+  ```
+  样例 2：
+  当前系统时间
+  <span id="nowTime"></span>
+  <script type="text/javascript">
+  //获取系统时间
+  var newDate = '';
+  getLangDate();
+  //值小于10时，在前面补0
+  function dateFilter(date){
+  if(date < 10){return "0"+date;}
+  return date;
+  }
+  function getLangDate(){
+  var dateObj = new Date(); //表示当前系统时间的Date对象
+  var year = dateObj.getFullYear(); //当前系统时间的完整年份值
+  var month = dateObj.getMonth()+1; //当前系统时间的月份值
+  var date = dateObj.getDate(); //当前系统时间的月份中的日
+  var day = dateObj.getDay(); //当前系统时间中的星期值
+  var weeks = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+  var week = weeks[day]; //根据星期值，从数组中获取对应的星期字符串
+  var hour = dateObj.getHours(); //当前系统时间的小时值
+  var minute = dateObj.getMinutes(); //当前系统时间的分钟值
+  var second = dateObj.getSeconds(); //当前系统时间的秒钟值
+  var timeValue = "" +((hour >= 12) ? (hour >= 18) ? "晚上" : "下午" : "上午" ); //当前时间属于上午、晚上还是下午
+  newDate = dateFilter(year)+"年"+dateFilter(month)+"月"+dateFilter(date)+"日 "+" "+dateFilter(hour)+":"+dateFilter(minute)+":"+dateFilter(second);
+  document.getElementById("nowTime").innerHTML = timeValue+"好！当前时间为： "+newDate+"　"+week;
+  setTimeout("getLangDate()",1000);
+  }
+  </script>
+  ```
+  ```
+  样例 3：
+  function showtime(times) { //传入时间的参数
+  var time_1 = new Date(times).getTime();
+  var time_2 = new Date().getTime();
+  var time_3;
+  var time_distance;
+  //计算时间差
+  if (time_1 > time_2) {
+  time_distance = time_1 - time_2;
+  } else {
+  time_distance = time_2 - time_1;
+  }
+  if (time_distance > 0) {
+  // 天时分秒换算
+  var int_day = Math.floor(time_distance / 86400000);
+  time_distance -= int_day * 86400000;
+  var int_hour = Math.floor(time_distance / 3600000);
+  time_distance -= int_hour * 3600000;
+  var int_minute = Math.floor(time_distance / 60000);
+  time_distance -= int_minute * 60000;
+  var int_second = Math.floor(time_distance / 1000);
+  // 时分秒为单数时、前面加零
+  if (int_day < 10) {
+  int_day = "0" + int_day;
+  }
+  if (int_hour < 10) {
+  int_hour = "0" + int_hour;
+  }
+  if (int_minute < 10) {
+  int_minute = "0" + int_minute;
+  }
+  ```
