@@ -262,7 +262,7 @@
 
 
   
-    <article id="post-2020-06-17-goindex-magic-change" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2020-07-05-build-ssr-ss" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -270,7 +270,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/08/30/2020-06-17-goindex-magic-change/">Goindex的魔改版本</a>
+	  <a class="article-title" href="/2020/08/31/2020-07-05-build-ssr-ss/">搭建SSR-SS服务器教程</a>
 	
     </h1>
   
@@ -278,8 +278,8 @@
 
   
   
-<a href="/2020/08/30/2020-06-17-goindex-magic-change/" class="archive-article-date">
-        <time datetime="2020-08-30T02:56:54.506Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-30</time>
+<a href="/2020/08/31/2020-07-05-build-ssr-ss/" class="archive-article-date">
+        <time datetime="2020-08-31T01:56:32.588Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-31</time>
 </a>
 
   
@@ -291,15 +291,322 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="http://jiangjiawei.epizy.com/wp-content/uploads/2020/06/u3207433114120194597fm26gp0.png" alt="img"></p>
-<p><strong>GoIndex</strong>是一款部署在<strong>Cloudflare Workers</strong>的Google Drive目录索引程序，无需提供服务器，可以直接列出你谷歌网盘的所有文件，同时下载和访问也不需要挂梯子，也可以在线观看某些格式的视频文件。<br>原版Github地址：<a target="_blank" rel="noopener" href="https://github.com/donwa/goindex">https://github.com/donwa/goindex</a></p>
-<p>原版作者由于某些原因已经删库。</p>
-<p>这次主要介绍的是基于原版Goindex的一个魔改版本</p>
-<p>Github项目地址 ：<a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou">https://github.com/Aicirou/goindex-theme-acrou</a><br>此魔改版本的特色：</p>
-<p>🔐 多盘切换<br>🔐 Http Basic Auth<br>🎨 网格视图模式（文件预览）<br>🎯 分页加载<br>🌐 I18n（多国语言）<br>🛠 html渲染<br>🖥 视频在线播放(mp4,mkv,webm,flv,m3u8)<br>🚀 拥有更快的速度</p>
-<p>开发者demo <a target="_blank" rel="noopener" href="https://oss.achirou.workers.dev/">https://oss.achirou.workers.dev/</a><br>快速部署:<br>此魔改版本同样支持快速部署：<br>打开<a target="_blank" rel="noopener" href="https://goindex-quick-install.glitch.me/">https://goindex-quick-install.glitch.me</a><br>授权并获取授权码<br>将代码部署到 Cloudflare Workers<br>关于使用自己的api部署可以查阅项目介绍页的说明，由于本人较懒使用的是快速部署所以就不过多介绍了。<br>使用个人api部署好处就是安全点，高峰期也不容易爆炸。</p>
-<p>查看<a target="_blank" rel="noopener" href="https://goindex-quick-install.glitch.me/">https://goindex-quick-install.glitch.me</a>的源码<a target="_blank" rel="noopener" href="https://glitch.com/@qianqian1307">https://glitch.com/@qianqian1307</a></p>
-<p>作者: 赖小瑜<br>链接: <a target="_blank" rel="noopener" href="https://blog.likexy.me/posts/a3ab42cc/">https://blog.likexy.me/posts/a3ab42cc/</a></p>
+    <p><img src="http://jiangjiawei.epizy.com/wp-content/uploads/2020/07/images.png" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/Hf62b13c4369e431d8cb44fa2f239760da.png" alt="img"></p>
+<h3 id="自己搭建ss-ssr教程很简单，整个教程分三步："><a href="#自己搭建ss-ssr教程很简单，整个教程分三步：" class="headerlink" title="自己搭建ss/ssr教程很简单，整个教程分三步："></a>自己搭建ss/ssr教程很简单，整个教程分三步：</h3><ul>
+<li>第一步：购买VPS服务器</li>
+<li>第二步：一键部署VPS服务器</li>
+<li>第三步：一键加速VPS服务器</li>
+</ul>
+<h3 id="第一步购买VPS服务器"><a href="#第一步购买VPS服务器" class="headerlink" title="第一步购买VPS服务器"></a>第一步购买VPS服务器</h3><p>PS服务器需要选择国外的，推荐国际知名的vultr，速度不错、稳定且性价比高，按小时计费，能够随时开通和删除服务器，新服务器即是新ip。关键就算出错了，随便怎么折腾怎么戳都没事，所以比较适合新手</p>
+<p><strong>注册地址：</strong><a target="_blank" rel="noopener" href="https://www.vultr.com/">https://www.vultr.com/</a></p>
+<p>虽然是英文界面，但是现在的浏览器都有网页翻译功能，鼠标点击右键，选择网页翻译即可翻译成中文。</p>
+<p>注册并邮件激活账号，充值后即可购买服务器。充值方式是支付宝或paypal，使用paypal有银行卡</p>
+<p>计费从你开通服务器开始算的，不管你有没有使用，即使服务器处于关机状态仍然会计费，如果你没有开通服务器就不算。比如你今天早上开通了服务器，但你有事情，晚上才部署，那么这段时间是会计费的。同理，如果你早上删掉服务器，第二天才开通新的服务器，那么这段时间是不会计费的。在账号的Billing选项里可以看到账户余额。</p>
+<p><strong>账号充值截图</strong></p>
+<p><img src="https://ae01.alicdn.com/kf/H15fabfde06714542b4ef1faf3deb0606J.png" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/Ha590c8b4a88141d08b4dd5141b454939Y.png" alt="img"></p>
+<p><strong>开通服务器步骤如图</strong></p>
+<p><img src="https://ae01.alicdn.com/kf/H094cd2baf6a748568b2c6094e1e283e5A.png" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/H708612c8f6c842ac848efcc42d1f28c0I.png" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/He516bf83bed5404ca93e55428cb18f78l.png" alt="img"></p>
+<ul>
+<li>点击图中的CentOS几个字，会弹出centos6，然后选中centos6！ （不要选默认的centos8，脚本不支持centos8！）</li>
+</ul>
+<p>开通服务器时，当出现了ip，不要立马去ping或者用xshell去连接，再等5分钟之后，有个缓冲时间。完成购买后，找到系统的密码记下来，部署服务器时需要用到。vps系统（推荐centos6）的密码获取方法如下图：</p>
+<p><img src="https://ae01.alicdn.com/kf/H792ae68ad887450eb2f6e7b9990361baK.png" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/Hd376f32c42664d23a76dee14d00de35a3.png" alt="img"></p>
+<p><strong>删除服务器如下图</strong></p>
+<p><img src="https://ae01.alicdn.com/kf/H65d400a94c7843e88562f912d56c6c9fj.png" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/H08d0091a31e0466e8ae1f377dd3776cb8.png" alt="img"></p>
+<p>一个被墙ip的vps被删掉后，其ip并不会消失，会随机分配给下一个在这个服务器位置新建服务器的人，这就是为什么开新服务器会有一定几率开到被墙的ip。被墙是指在国内地区无法ping通服务器，但在国外是可以ping通的，vultr是面向全球服务，如果这个被墙ip被国外的人开到了，它是可以被正常使用的，半年或1年后这个被墙的ip可能会被国内防火墙解封，那么这就是一个良性循环。</p>
+<hr>
+<h3 id="第二步部署vps服务器"><a href="#第二步部署vps服务器" class="headerlink" title="第二步部署vps服务器"></a>第二步部署vps服务器</h3><p>购买服务器后，需要部署一下。因为你买的是虚拟东西，而且又远在国外，我们需要一个叫Xshell的软件来远程部署。Xshell windows版下载地址：</p>
+<p><a target="_blank" rel="noopener" href="http://xturludmhbvcwu2numac2amelz1awaz5tygcuuyzqn1exatafnq1uvjabnlywddsbcqogbgwkpg)/">点击下载Xshell windows</a></p>
+<blockquote>
+<p>如果你是MAC操作系统，更简单，无需下载xshell，系统可以直接连接VPS。打开终端（Terminal），输入ssh root@ip 其中“ip”替换成你VPS的ip, 按回车键，然后复制粘贴密码，按回车键即可登录。粘贴密码时有可能不显示密码，但不影响， 参考设置方法 如果不能用MAC自带的终端连接的话，直接网上搜“MAC连接SSH的软件”，有很多，然后通过软件来连接vps服务器就行，具体操作方式参考windows xshell。</p>
+</blockquote>
+<p><strong>部署教程</strong></p>
+<p>下载windows xshell软件并安装后，打开软件</p>
+<p><img src="https://ae01.alicdn.com/kf/H4e0ca2d5cc6f4d2a8f5c0605c23dd4d0h.png" alt="img"></p>
+<p>选择文件，新建</p>
+<p><img src="https://ae01.alicdn.com/kf/H3e9814eee886419ab23c93b015bcdbb5R.png" alt="img"></p>
+<p>随便取个名字，然后把你的服务器ip填上</p>
+<p><img src="https://ae01.alicdn.com/kf/H59e733487fef47f183292e1b0986ca61j.png" alt="img"></p>
+<p>连接国外ip即服务器时，软件会先后提醒你输入用户名和密码，用户名默认都是root，密码是你购买的服务器系统的密码。</p>
+<blockquote>
+<p>如果xshell连不上服务器，没有弹出让你输入用户名和密码的输入框，表明你开到的ip是一个被墙的ip，遇到这种情况，重新开新的服务器，直到能用xshell连上为止，耐心点哦！如果同一个地区开了多台服务器还是不行的话，可以换其它地区。</p>
+</blockquote>
+<p><img src="https://ae01.alicdn.com/kf/Hb2f6415a94554f44a1d783eb121145eby.png" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/H77a6444195974c1589d5f79c01fdc3f5J.png" alt="img"></p>
+<p>连接成功后，会出现如上图所示，之后就可以复制粘贴代码部署了。<br>CentOS 6和7/Debian6+/Ubuntu14+ ShadowsocksR一键部署管理脚本（2018.11.21更新）：</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br><span class="line">wget -N --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ToyoDAdoubi&#x2F;doubi&#x2F;master&#x2F;ssr.sh &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.sh</span><br></pre></td></tr></table></figure>
+
+<p>备用脚本二（2018.11.21更新）<br>如果上面的脚本暂时用不了，可以用下面的备用脚本，备用脚本没有单独做图文教程，自己摸索下就会了。备用脚本卸载命令：./shadowsocksR.sh uninstall</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br><span class="line">wget --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;teddysun&#x2F;shadowsocks_install&#x2F;master&#x2F;shadowsocksR.sh</span><br><span class="line">chmod +x shadowsocksR.sh</span><br><span class="line">.&#x2F;shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log</span><br></pre></td></tr></table></figure>
+
+<p><em>如果提示 wget: command not found 的错误，这是你的系统精简的太干净了，wget都没有安装，所以需要安装wget。CentOS系统安装wget命令: yum install -y wget Debian/Ubuntu系统安装wget命令:apt-get install -y wget</em></p>
+<p>复制上面的脚本一代码到VPS服务器里，复制代码用鼠标右键的复制（整个代码一起复制，而不是分段哦！），然后在vps里面右键粘贴进去，因为ctrl+c和ctrl+v无效。接着按回车键，脚本会自动安装，以后只需要运行这个快捷命令就可以出现下图的界面进行设置，快捷管理命令为：bash ssr.sh</p>
+<p><img src="https://ae01.alicdn.com/kf/H68ea896a85714b94ad8703d6328b40c5E.png" alt="img"></p>
+<p>如上图出现管理界面后，输入数字1来安装SSR服务端。如果输入1后不能进入下一步，那么请退出xshell，重新连接vps服务器，然后输入快捷管理命令bash ssr.sh 再尝试。</p>
+<p><img src="https://ae01.alicdn.com/kf/H9e8ded9474854b5290605e9f7638e47eA.png" alt="img"></p>
+<p>根据上图提示，依次输入自己想设置的端口和密码 (密码建议用复杂点的字母组合，端口号为40-65535之间的数字)，回车键用于确认</p>
+<p>注：关于端口的设置，总的网络总端口有6万多个，理论上可以任意设置，但不要以0开头！但是有的地区需要设置特殊的端口才有效，一些特殊的端口比如80、143、443、1433、3306、3389、8080。</p>
+<p><img src="https://ae01.alicdn.com/kf/H1dd6fb70a34a46fe95244b07b637046aJ.png" alt="img"></p>
+<p>如上图，选择想设置的加密方式，比如10，按回车键确认</p>
+<p>接下来是选择协议插件，如下图：</p>
+<p><img src="https://ae01.alicdn.com/kf/Ha2a3ad95271c4a18a9bcc648c4ec132ez.png" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/H1e651754b4064c4da86cc20204babf4b7.png" alt="img"></p>
+<p>选择并确认后，会出现上图的界面，提示你是否选择兼容原版，这里的原版指的是SS客户端（SS客户端没有协议和混淆的选项），可以根据需求进行选择，演示选择y</p>
+<p>之后进行混淆插件的设置。</p>
+<p><strong>注意：如果协议是origin，那么混淆也必须是plain；如果协议不是origin，那么混淆可以是任意的。有的地区需要把混淆设置成plain才好用。因为混淆不总是有效果，要看各地区的策略，有时候不混淆（plain）或者（origin和plain一起使用），让其看起来像随机数据更好。（特别注意：tls 1.2_ticket_auth容易受到干扰！请选择除tls开头以外的其它混淆！！！）</strong></p>
+<p><img src="https://ae01.alicdn.com/kf/H43b1d55cc60a4ae694543990164a91eeq.png" alt="img"></p>
+<p>进行混淆插件的设置后，会依次提示你对设备数、单线程限速和端口总限速进行设置，默认值是不进行限制，个人使用的话，选择默认即可，即直接敲回车键。</p>
+<p>注意：关于限制设备数，这个协议必须是非原版且不兼容原版才有效，也就是必须使用SSR协议的情况下，才有效！</p>
+<p><img src="https://ae01.alicdn.com/kf/H98bb2a0b19534802a8b3bca12fb3a4abH.png" alt="img"></p>
+<p>之后代码就正式自动部署了，到下图所示的位置，提示你下载文件，输入：y</p>
+<p><img src="https://ae01.alicdn.com/kf/H3c277aeb206e43c1a3977d47cb453cccY.png" alt="img"></p>
+<p>耐心等待一会，出现下面的界面即部署完成：</p>
+<p><img src="https://ae01.alicdn.com/kf/H2cb4a67eabc9473599e7bc6670125e4cc.png" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/H99be20de459847b1986617b8a55555f1A.png" alt="img"></p>
+<p>根据上图就可以看到自己设置的SSR账号信息，包括IP、端口、密码、加密方式、协议插件、混淆插件，这些信息需要填入你的SSR客户端。提醒一下：二维码链接地址由于域名失效不可用，所以部署好的账号需要自己在客户端里面手动填写信息。</p>
+<p>如果之后想修改账号信息，直接输入快捷管理命令：bash ssr.sh 进入管理界面，选择相应的数字来进行一键修改。例如：</p>
+<p><img src="https://ae01.alicdn.com/kf/Hef59f4ebe202440492a27e752e6d30e3a.png" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/H48a9424da7d940f89c3b39b8be7412416.png" alt="img"></p>
+<p><strong>脚本演示结束。</strong></p>
+<p>此脚本是开机自动启动，部署一次即可。最后可以重启服务器确保部署生效（一般情况不重启也可以）。重启需要在命令栏里输入reboot ，输入命令后稍微等待一会服务器就会自动重启，一般重启过程需要2～5分钟，重启过程中Xshell会自动断开连接，等VPS重启好后才可以用Xshell软件进行连接。如果部署过程中卡在某个位置超过10分钟，可以用xshell软件断开，然后重新连接你的ip，再复制代码进行部署。</p>
+<h3 id="第三步：一键加速VPS服务器"><a href="#第三步：一键加速VPS服务器" class="headerlink" title="第三步：一键加速VPS服务器"></a>第三步：一键加速VPS服务器</h3><p>总共有2种加速方法，锐速加速和bbr加速，选择1种。</p>
+<p><strong>加速教程1：破解版锐速加速教程</strong></p>
+<p>此加速教程为破解版锐速加速,Vultr的服务器centos6系统官方进行了更新，导致目前不支持BBR的部署，但锐速应该是可以部署的，故增加了此部署脚本，加速后对速度的提升很明显，所以推荐部署加速脚本。该加速方法是开机自动启动，部署一次就可以了。</p>
+<p>第一步，先更换服务器内核（脚本只支持centos系统，其它系统可以直接尝试第二步）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br><span class="line">wget --no-check-certificate https:&#x2F;&#x2F;blog.asuhu.com&#x2F;sh&#x2F;ruisu.sh &amp;&amp; bash ruisu.sh</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://ae01.alicdn.com/kf/H24b358b860934823b061acd3f2e7710dt.png" alt="img"></p>
+<p>不动的时候敲回车键，在上图时需要多等一会儿。</p>
+<p><img src="https://ae01.alicdn.com/kf/He2005f96d45844cf8775c4f2d00a9c51K.png" alt="img"></p>
+<p>出现上图时表示已成功替换内核并服务器自动重启。</p>
+<p>完成后会重启，2分钟后重新连接服务器，连上后开始第二步的操作。</p>
+<p>第二步，一键安装锐速</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;91yun&#x2F;serverspeeder&#x2F;master&#x2F;serverspeeder-all.sh &amp;&amp; bash serverspeeder-all.sh</span><br></pre></td></tr></table></figure>
+
+<p>卸载加速代码命令为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chattr -i &#x2F;serverspeeder&#x2F;etc&#x2F;apx* &amp;&amp; &#x2F;serverspeeder&#x2F;bin&#x2F;serverSpeeder.sh uninstall -f</span><br></pre></td></tr></table></figure>
+
+<p>但有些内核是不适合的，部署过程中需要手动选择推荐的，当部署时出现以下字样：</p>
+<p><img src="https://ae01.alicdn.com/kf/Hd306e02a1e57403bbcc6bcf2cfb08e80e.png" alt="img"></p>
+<p>提示没有完全匹配的内核,随便选一个内核就行,按照提示来输入数字,按回车键即可</p>
+<p>锐速安装成功标志如下：</p>
+<p><img src="https://ae01.alicdn.com/kf/H7954f91dc6cf45db8b57b378827b0a06C.png" alt="img"></p>
+<p>出现running字样即可!</p>
+<hr>
+<p><strong>加速教程2：谷歌BBR加速教程</strong></p>
+<p>vultr服务器的centos6不支持bbr加速，但centos7系统支持bbr加速，所以如果你想用bbr加速教程，vps操作系统需要选择centos7或其它系统。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget</span><br><span class="line">wget --no-check-certificate https:&#x2F;&#x2F;github.com&#x2F;teddysun&#x2F;across&#x2F;raw&#x2F;master&#x2F;bbr.sh</span><br><span class="line">chmod +x bbr.sh</span><br><span class="line">.&#x2F;bbr.sh</span><br></pre></td></tr></table></figure>
+
+<p>把上面整个代码复制后粘贴进去，不动的时候按回车，然后耐心等待，最后重启vps服务器即可。</p>
+<p>演示开始，如图：</p>
+<p>复制并粘贴代码后，按回车键确认</p>
+<p><img src="https://ae01.alicdn.com/kf/Hfe25a488656f4c9e8e95937898fde73bk.png" alt="img"></p>
+<p>如下图提示，按任意键继续部署</p>
+<p><img src="https://ae01.alicdn.com/kf/H9f0e463983fa48a1ae39c8a048a43fc7l.png" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/Hf83968e35cd8410ea3340f39895f6a51f.png" alt="img"></p>
+<p>部署到上图这个位置的时候，等待3～6分钟</p>
+<p><img src="https://ae01.alicdn.com/kf/H2f5da9892b4944dbbaa222e0476c68d8J.png" alt="img"></p>
+<p>最后输入y重启服务器，如果输入y提示command not found ，接着输入reboot来重启服务器，确保加速生效，bbr加速脚本是开机自动启动，装一次就可以了。</p>
+<p>服务器重启成功并重新连接服务器后，输入命令lsmod | grep bbr 如果出现tcp_bbr字样表示bbr已安装并启动成功。如图：</p>
+<p><img src="https://ae01.alicdn.com/kf/H52bc9a778e274caa91123d6479ac9cabT.png" alt="img"></p>
+<p><strong>注意1：</strong>根据反馈，少部分人安装bbr脚本并重启后，几分钟过去了，发现xshell无法连接服务器且服务器ip无法ping通。解决方法是：开新服务器或者重装系统，然后先安装bbr脚本再安装ssr脚本，或者改用锐速加速脚本。</p>
+<p>重装系统方法，点击vultr服务器设置界面——“Server Reinstall”，如下图：</p>
+<p><img src="https://ae01.alicdn.com/kf/H886bf597bb9c44109fc384f66f1e0a47L.png" alt="img"></p>
+<p>重装过程一般需要5～10分钟。</p>
+<p>注意2：如果创建的是centos7的服务器，安装bbr加速后需要使用命令关闭防火墙，否则无法使用代理。CentOS 7.0默认使用的是firewall作为防火墙。</p>
+<p>查看防火墙状态命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+
+<p>停止</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall命令：systemctl stop firewalld.service</span><br></pre></td></tr></table></figure>
+
+<p>禁止firewall开机启动命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
+
+<p>来源: 跨界思享<br>文章作者: 李龙耀<br>文章链接: <a target="_blank" rel="noopener" href="https://www.kuajie.me/2019/12/01/%E6%90%AD%E5%BB%BASSR-SS%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B%E3%80%8A%E9%80%82%E5%90%88%E6%96%B0%E6%89%8B%E3%80%8B/">https://www.kuajie.me/2019/12/01/%E6%90%AD%E5%BB%BASSR-SS%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%95%99%E7%A8%8B%E3%80%8A%E9%80%82%E5%90%88%E6%96%B0%E6%89%8B%E3%80%8B/</a><br>本文章著作权归作者所有，任何形式的转载都请注明出处。</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术分享</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">科学上网</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/31/2020-07-05-build-ssr-ss/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2020-08-27-Markdown Cheat sheet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/08/31/2020-08-27-Markdown%20Cheat%20sheet/">markdown备忘表</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/08/31/2020-08-27-Markdown%20Cheat%20sheet/" class="archive-article-date">
+        <time datetime="2020-08-31T01:50:12.561Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-31</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="总览"><a href="#总览" class="headerlink" title="总览"></a>总览</h2><p>该Markdown备忘单提供了所有Markdown语法元素的快速概述。它无法涵盖所有的极端情况，因此，如果您需要有关这些元素中任何一个的更多信息，请参阅我们的参考指南以获取<a target="_blank" rel="noopener" href="http://markdown.p2hp.com/basic-syntax">基本语法</a>和<a target="_blank" rel="noopener" href="http://markdown.p2hp.com/extended-syntax">扩展语法</a>。</p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p>这些是John Gruber原始设计文档中概述的元素。所有Markdown应用程序都支持这些元素。 .</p>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>Markdown 语法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/basic-syntax/index.html#headings">标题</a></td>
+<td><code># H1## H2### H3</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/basic-syntax/index.html#bold">粗体</a></td>
+<td><code>**bold text**</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/basic-syntax/index.html#italic">斜体</a></td>
+<td><code>*italicized text*</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/basic-syntax/index.html#blockquotes-1">块引用</a></td>
+<td><code>&gt; blockquote</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/basic-syntax/index.html#ordered-lists">有序列表</a></td>
+<td><code>1. First item2. Second item3. Third item</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/basic-syntax/index.html#unordered-lists">无序列表</a></td>
+<td><code>- First item- Second item- Third item</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/basic-syntax/index.html#code">代码</a></td>
+<td><code>code</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/basic-syntax/index.html#horizontal-rules">水平线</a></td>
+<td><code>---</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/basic-syntax/index.html#links">超链接</a></td>
+<td><code>[title](https://www.example.com)</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/basic-syntax/index.html#images-1">图片</a></td>
+<td><code>![alt text](image.jpg)</code></td>
+</tr>
+</tbody></table>
+<h2 id="扩展语法"><a href="#扩展语法" class="headerlink" title="扩展语法"></a>扩展语法</h2><p>这些元素通过添加其他功能来扩展基本语法。并非所有Markdown应用程序都支持这些元素。 .</p>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>Markdown 语法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/extended-syntax/index.html#tables">表格</a></td>
+<td>`</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/extended-syntax/index.html#fenced-code-blocks">围栏代码块</a></td>
+<td><code>&#123;  &quot;firstName&quot;: &quot;John&quot;,  &quot;lastName&quot;: &quot;Smith&quot;,  &quot;age&quot;: 25&#125;</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/extended-syntax/index.html#footnotes">脚注</a></td>
+<td><code>Here&#39;s a sentence with a footnote. [^1][^1]: This is the footnote.</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/extended-syntax/index.html#heading-ids">标题ID</a></td>
+<td><code>### My Great Heading &#123;#custom-id&#125;</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/extended-syntax/index.html#definition-lists">自定义列表</a></td>
+<td><code>term: definition</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/extended-syntax/index.html#strikethrough">删除线</a></td>
+<td><code>~~The world is flat.~~</code></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="http://markdown.p2hp.com/extended-syntax/index.html#task-lists">任务列表</a></td>
+<td><code>- [x] Write the press release- [ ] Update the website- [ ] Contact the media</code></td>
+</tr>
+</tbody></table>
 
     
 
@@ -326,7 +633,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/30/2020-06-17-goindex-magic-change/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/08/31/2020-08-27-Markdown%20Cheat%20sheet/">展开全文 >></a>
     </p>
     
 
@@ -356,7 +663,7 @@
 
 
   
-    <article id="post-2020-06-16-home" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2020-07-11-autorclone-breakthrough-limit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -364,7 +671,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/08/30/2020-06-16-home/">家，一扇展开岁月的门</a>
+	  <a class="article-title" href="/2020/08/31/2020-07-11-autorclone-breakthrough-limit/">AutoRclone教程:如何突破Google Drive每日750G限制？</a>
 	
     </h1>
   
@@ -372,8 +679,8 @@
 
   
   
-<a href="/2020/08/30/2020-06-16-home/" class="archive-article-date">
-        <time datetime="2020-08-30T02:56:54.475Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-30</time>
+<a href="/2020/08/31/2020-07-11-autorclone-breakthrough-limit/" class="archive-article-date">
+        <time datetime="2020-08-31T01:42:40.331Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-31</time>
 </a>
 
   
@@ -385,12 +692,212 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>　　每逢春节和中秋的假日，人们都喜欢赶回家与家人团聚，交通运输的任务也会突然繁忙起来。来自四面八方的人朝着自己的家奔赶去，无论列车多么拥挤，路途多么遥远，路上有多么辛苦 ，回家的信念却是十分的强烈。望着熙熙攘攘往家赶的人群，我的心中对家有种强烈的特别感觉，家，这个词在人们的心中是多么具有吸引力，父母，家人，这个词在人们心中显得是那么有人情味，家，在人们心中的份量又是多么的重。</p>
-<p>　　平日里，每当日落西山，夜幕降临时，无论是下班的大人，还是放学的小孩，也都是急切地盼望着能早点回到自己的家中，围坐在饭桌旁，和家人一起说说笑笑，吃着热气腾腾的饭菜。因为有了一个家，生活才会更有意义；有了一个家，就会让你感受到幸福的含义；有了一个家，你的学习工作事业会更加的添力。</p>
-<p>　　那些在外地的工作的人们，尽管吃住都较好，逢年过节时，总有一股“日暮乡关何处是，烟波江上使人愁”之感，倍思亲之情会从心中油然而生，因为在大地的那一边，有一个家像磁石一样地吸引着你，有一种爱——父母的爱像纽带一样牵系着你的心。亲情如水，来到父母身边，它能使心中的纷繁经过过滤变得纯净；亲情似火，来到父母身边，它能使你平淡的生活里增添温暖；亲情是诗，来到父母身边，它能使你乏味的生活经过父母的笑容和唠叨达到一种意境。父母的爱，家人的亲情，是生命永恒的动力。</p>
-<p>　　和家人相处、亲切、平淡、凡庸、琐碎、还带有鸡毛蒜皮的世俗意味，它虽缺少朋友之间那种高山流水，也没有哥们之间意气激荡、豪迈与奔放，它更缺少那种与异性交往中那种温馨旖旎，它当不得饮食中的山珍海味，但它却如同米饭、青菜、豆腐、虽普通却很耐久，它也没有白酒那样的烈性，能使人血脉贲张，更没有红、白葡萄酒那般美艳、清冽，但它却像平和醇厚的米酒那样朴实甘甜，润人心田，和家人在一起是平凡而有滋味的一种天伦之乐。</p>
-<p>　　如果家人出门不在家了，冷清的家就不复诱人。此时，人就会变得散漫，像只没头苍蝇，胡乱地打发着日子，无所归依。虽说家人不一定和你最为相知，然而往往与你休戚与共，你的好与坏，直接影响着家人的情绪，最为发自内心的关心也来自家人，在你失意和满身创伤时，唯一接纳你的，可能就是你的父母和家人。家人之间能彼此分担着痛苦与烦恼，能彼此分享快乐与成功，如果家人站在了你的身后，此时你就会无所畏惧，鼓起战胜困难的勇气。</p>
-<p>　　难怪每年的春节中秋等节假日，交通运输会有这等的繁忙，因为外面的人们要回去与家人团聚，要向家人和父母倾诉在外的酸甜苦辣，要与家人分享幸福和成功。家是生命成长的根，忙忙碌碌，尝尽风雪的心，只有在家的感化下，才能转化成宁静、祥和之美，才会泰然淡泊，从微苦的岁月里品味出香甜和温馨。这种美是柔和的欢悦的，绵远而悠远的。因为在家能看见与爱人相拥时的热泪，见到双亲微驼的背影，一扇家门展开的岁月，铺就和注定着我们一生的结局。</p>
+    <h2 id="AutoRclone可以干什么？"><a href="#AutoRclone可以干什么？" class="headerlink" title="AutoRclone可以干什么？"></a>AutoRclone可以干什么？</h2><p>可以方便快捷地：</p>
+<ul>
+<li>从Google Drive到Team Drive</li>
+<li>从Team Drive到Google Drive</li>
+<li>从本地到 Team Drive，</li>
+<li>从公共分享目录到 Team Drive，</li>
+<li>再或者从 Team Drive 到 Team Drive。</li>
+</ul>
+<p>换句话说，就是实现 Team Drive，Google Drive，本地之间的互拷，以及把分享的文件复制到，或者说真正地转存到自己想要的地方。</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li>以下，我们将Google Drive简称GD，将Team Drive简称TD，将服务账号(Service Account)简称为SA。<br>何为文件夹/文件/TD的id？</li>
+<li>例如，文件夹/文件/TD的网址为<code>drive.google.com/drive/u/0/folders/10y_9ucYQyvfxuexDKiOY2pp1CXlXy</code><br>那么，它的id即为<code>10y_9ucYQyvfxuexDKiOY2pp1CXlXy</code>。如果出现形如 的后缀，请务必删除。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">大致步骤:</span><br><span class="line">先建立自己的团队盘:谷歌团队无限盘申请</span><br><span class="line">管理地址：https:&#x2F;&#x2F;drive.google.com&#x2F;drive&#x2F;u&#x2F;0&#x2F;shared-drives</span><br><span class="line">1、安装Python及主程序：Python、Rclone(https:&#x2F;&#x2F;rclone.org&#x2F;downloads&#x2F;)、AutoClone(https:&#x2F;&#x2F;github.com&#x2F;xyou365&#x2F;AutoRclone)、科学工具</span><br><span class="line">2、生成SA</span><br><span class="line">3、管理SA</span><br><span class="line">4、开始运行</span><br></pre></td></tr></table></figure>
+
+<h2 id="步骤1-相关依赖"><a href="#步骤1-相关依赖" class="headerlink" title="步骤1 相关依赖"></a>步骤1 相关依赖</h2><h3 id="安装Python。"><a href="#安装Python。" class="headerlink" title="安装Python。"></a>安装Python。</h3><p>对于 Win­dows 系统来说，<a target="_blank" rel="noopener" href="https://www.python.org/downloads/">在此</a>找到你的安装包，直接下载并运行即可。<br>对于 Linux 系统来说，一般自带 Python，你可以试试输入 python 或者 python3 看看有没有反应，如果有，请继续下一步。<br>如果没有，则 De­bian/​Ubuntu 输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line">apt install python3-pip git screen -y</span><br></pre></td></tr></table></figure>
+
+<p>Cen­tOS 输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum update</span><br><span class="line">yum install python3-pip git screen -y</span><br></pre></td></tr></table></figure>
+
+<h3 id="Windows安装python依赖及主程序"><a href="#Windows安装python依赖及主程序" class="headerlink" title="Windows安装python依赖及主程序"></a>Windows安装python依赖及主程序</h3><p>进入 <a target="_blank" rel="noopener" href="https://github.com/xyou365/AutoRclone">AutoRclone</a> 的 Github 项目页，然后点击屏幕右边的绿色 Clone or Down­load 下载代码，如图所示。</p>
+<p><a target="_blank" rel="noopener" href="http://panoan.top/usr/uploads/2020/03/289240866.png#vwid=1020&vhei=338"><img src="http://panoan.top/usr/uploads/2020/03/289240866.png#vwid=1020&vhei=338" alt="img"></a></p>
+<p>接着你需要下载<a target="_blank" rel="noopener" href="https://rclone.org/downloads/">Rclone</a>，选择合适的Windows系统即可。<br>之后需要将Rclone添加进环境变量。</p>
+<h5 id="Windows-10-和-Windows-8"><a href="#Windows-10-和-Windows-8" class="headerlink" title="Windows 10 和 Windows 8"></a>Windows 10 和 Windows 8</h5><ol>
+<li>在“搜索”中，搜索以下内容并进行选择：控制面板</li>
+<li>单击高级系统设置链接。</li>
+<li>单击环境变量。在系统变量部分中，找到并选择 PATH 环境变量。单击编辑。如果 PATH 环境变量不存在，请单击新建。</li>
+<li>在编辑系统变量（或新建系统变量）窗口中，指定 PATH 环境变量的值。单击确定。通过单击确定关闭所有剩余窗口。</li>
+</ol>
+<h5 id="Windows-7"><a href="#Windows-7" class="headerlink" title="Windows 7"></a>Windows 7</h5><ol>
+<li>在桌面上右键单击计算机图标。</li>
+<li>从上下文菜单中选择属性。</li>
+<li>单击高级系统设置链接。</li>
+<li>单击环境变量。在系统变量部分中，找到并选择 PATH 环境变量。单击编辑。如果 PATH 环境变量不存在，请单击新建。</li>
+<li>在编辑系统变量（或新建系统变量）窗口中，指定 PATH 环境变量的值。单击确定。通过单击确定关闭所有剩余窗口。</li>
+</ol>
+<h5 id="Windows-XP"><a href="#Windows-XP" class="headerlink" title="Windows XP"></a>Windows XP</h5><ol>
+<li>选择开始，再选择控制面板。双击系统，然后选择高级选项卡。</li>
+<li>单击环境变量。在系统变量部分中，找到并选择 PATH 环境变量。单击编辑。如果 PATH 环境变量不存在，请单击新建。</li>
+<li>在编辑系统变量（或新建系统变量）窗口中，指定 PATH 环境变量的值。单击确定。通过单击确定关闭所有<br>注意：</li>
+<li>PATH 环境变量的值即为你所安装的Rclone的目录，如你的Rclone.exe在目录D:\Rclone\Rclone.exe， 则你的 PATH 环境量的值即为D:\Rclone</li>
+<li>设置完成后请按组合键Win+R，输入cmd并回车以打开命令提示符，输入rclone，若返回很长的一串文字，则表示已经设置成功。</li>
+<li>在以下的运行中，每次运行cmd均需设置代理。代理方法不能在此讲述，请自行搜索。</li>
+<li>欲检验是否成功代理，下载<a target="_blank" rel="noopener" href="https://curl.haxx.se/download.html">curl</a>并安装Windows版本，同样设置环境变量，输入<code>curl https://www.google.com</code>若出现html的等字样，则表示已成功设置代理。</li>
+</ol>
+<p>假设我们已经下载好并且解压好的 Au­toR­clone 在目录 D:/Au­toR­clone 下<br>在命令行中，输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd D:&#x2F;AutoRclone</span><br><span class="line">pip3 install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<p>Win­dows 中可能显示为 D:\Au­toR­clone，即斜杠方向相反。无需刻意选择，在 cmd 中，两者都是可行的。<br>此举是为了使你的命令行在 D:/​Au­toR­clone 下进行相关操作。(形象化的说法：先把你的大刀移到 Au­toR­clone 面前！)</p>
+<h3 id="Linux安装python依赖及主程序"><a href="#Linux安装python依赖及主程序" class="headerlink" title="Linux安装python依赖及主程序"></a>Linux安装python依赖及主程序</h3><h4 id="对于Debian-Ubuntu系统"><a href="#对于Debian-Ubuntu系统" class="headerlink" title="对于Debian/Ubuntu系统"></a>对于Debian/Ubuntu系统</h4><p>只需输入如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install screen git &amp;&amp; curl https:&#x2F;&#x2F;rclone.org&#x2F;install.sh | sudo bash</span><br><span class="line">sudo git clone https:&#x2F;&#x2F;github.com&#x2F;xyou365&#x2F;AutoRclone &amp;&amp; cd AutoRclone &amp;&amp; sudo pip3 install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<h4 id="对于CentOS系统"><a href="#对于CentOS系统" class="headerlink" title="对于CentOS系统"></a>对于CentOS系统</h4><p>输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum install curl</span><br><span class="line">yum install screen</span><br><span class="line">yum install git</span><br><span class="line">curl https:&#x2F;&#x2F;rclone.org&#x2F;install.sh | sudo bash</span><br><span class="line">sudo git clone https:&#x2F;&#x2F;github.com&#x2F;xyou365&#x2F;AutoRclone &amp;&amp; cd AutoRclone &amp;&amp; sudo pip3 install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<h2 id="步骤2-生成SA"><a href="#步骤2-生成SA" class="headerlink" title="步骤2 生成SA"></a>步骤2 生成SA</h2><h3 id="为什么要生成SA呢？"><a href="#为什么要生成SA呢？" class="headerlink" title="为什么要生成SA呢？"></a>为什么要生成SA呢？</h3><p>我们每一个账户都有 750G 的限制，Au­toR­clone 目的在于当一个账号限额达到之后，切换至下一个。<br>服务账户就是这样的账户，在服务账户的帮助下我们无需大量创建 Google 账户来达到切换的目的。<br>你可以把服务账户理解为你的小兵，小兵有了，自然不需要一个又一个的将军了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">*提示 timeout 踩了好久好久的坑（Shadowsocks）</span><br><span class="line">pathon3只能使用http请求</span><br><span class="line">用这个来测试是否已经出去了。</span><br><span class="line">curl -vv http:&#x2F;&#x2F;www.google.com</span><br><span class="line">首先 set 一个变量只能set一项 已经规定http_proxy&#x3D;http了 就不能 规定http_proxy&#x3D;socks5</span><br><span class="line">所以通常我只用下面两项</span><br><span class="line">set http_proxy&#x3D;http:&#x2F;&#x2F;127.0.0.1:1080</span><br><span class="line">set https_proxy&#x3D;http:&#x2F;&#x2F;127.0.0.1:1080</span><br><span class="line">最后 路由器的http_proxy不是7890 ，强行在cmd规定http_proxy，也会报错。</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何生成Service-Account"><a href="#如何生成Service-Account" class="headerlink" title="如何生成Service Account"></a>如何生成Service Account</h3><h4 id="开启Drive-API"><a href="#开启Drive-API" class="headerlink" title="开启Drive API"></a>开启Drive API</h4><p>首先开启 <a target="_blank" rel="noopener" href="https://developers.google.com/drive/api/v3/quickstart/python">Drive API</a> 并将 cre­den­tials.json 保存到你的 Au­toR­clone 目录下面，如图所示</p>
+<p><a target="_blank" rel="noopener" href="https://img.vim-cn.com/46/a41db9c3b2b25ef86f5c55db3778544d854580.jpg#vwid=740&vhei=601"><img src="https://img.vim-cn.com/46/a41db9c3b2b25ef86f5c55db3778544d854580.jpg#vwid=740&vhei=601" alt="img"></a></p>
+<p>DOWNLOAD键你总该认识吧！</p>
+<p><strong>以下步骤如果输入 python3 没有反应，请输入 python 或者 py3</strong><br>如果你之前没创建过项目，直接运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 gen_sa_accounts.py --quick-setup 5</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建6个项目（项目0到项目5）</li>
+<li>开启相关的服务</li>
+<li>创建600个service accounts（6个项目，每个项目100个）</li>
+<li>将600个service accounts的授权文件下载到accounts文件夹下面</li>
+</ul>
+<h4 id="创建Service-Account"><a href="#创建Service-Account" class="headerlink" title="创建Service Account"></a>创建Service Account</h4><p>如果你已经有 N 个项目，现需要创建新的项目并在新的项目中创建 ser­vice ac­counts，直接运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 gen_sa_accounts.py --quick-setup 2 --new-only</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>额外创建2个项目（项目N+1到项目N+2）</li>
+<li>开启相关的服务</li>
+<li>创建200个service accounts（2个项目，每个项目100个）</li>
+<li>将200个service accounts的授权文件下载到accounts文件夹下面</li>
+</ul>
+<p>如果你想用已有的项目来创建 ser­vice ac­counts（不创建新的项目），直接运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 gen_sa_accounts.py --quick-setup -1</span><br></pre></td></tr></table></figure>
+
+<p>注意这会覆盖掉已有的 ser­vice ac­counts<br>顺利完成后，Au­toR­clone 文件下面的 ac­counts 文件夹下会有很多的 json 文件。</p>
+<p><strong><em>推荐使用\</em></strong> <code>python3 gen_sa_accounts.py --quick-setup 1</code><strong><em>一个项目 = 100 个 sa=750GB\</em>100=75T，一天 75T 足够了*</strong><br><strong>并且，随意创建多个项目的话，需要一个月后才能删除，且每个账户均有项目个数上限。</strong></p>
+<h2 id="步骤3-管理SA"><a href="#步骤3-管理SA" class="headerlink" title="步骤3 管理SA"></a>步骤3 管理SA</h2><p>好了，现在你已经创建好了 SA (你的小兵们)。<br>你可以在 <a target="_blank" rel="noopener" href="https://console.developers.google.com/apis/dashboard">Google APIs</a> 看到你的项目及 SA。<br>注意：</p>
+<ol>
+<li>每个项目里有100个SA</li>
+<li>点击此处可以看到你某个项目下的SA的秘钥及地址</li>
+<li>点击此处可以看到你的全部项目</li>
+<li>有的人可能想问，怎么我只有两个项目200个SA，却有500个json？<br>那是因为你浏览项目的时候需要点击“全部”。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="http://panoan.top/usr/uploads/2020/03/3556380987.png#vwid=235&vhei=126"><img src="http://panoan.top/usr/uploads/2020/03/3556380987.png#vwid=235&vhei=126" alt="img"></a></p>
+<p>有两种方式可以管理你的 SA。</p>
+<h3 id="方法一：直接加入团队盘"><a href="#方法一：直接加入团队盘" class="headerlink" title="方法一：直接加入团队盘"></a>方法一：直接加入团队盘</h3><p>此方法极度不推荐，仅对本地上传比较方便。<strong>极度不推荐！</strong><br>将 ser­vice ac­counts 加入到源 Team Drive</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 add_to_team_drive.py -d SharedTeamDriveSrcID</span><br></pre></td></tr></table></figure>
+
+<p>将 ser­vice ac­counts 加入到目标 Team Drive</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 add_to_team_drive.py -d SharedTeamDriveDstID</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法二：利用Group管理"><a href="#方法二：利用Group管理" class="headerlink" title="方法二：利用Group管理"></a>方法二：利用Group管理</h3><p>我们这里用到了 Google Groups。</p>
+<blockquote>
+<p>Of­fi­cial lim­its to the mem­bers of Team Drive (Limit for in­di­vid­u­als and groups di­rectly added as mem­bers is 600).<br>每个 Google Group 只能添加 600 个账户</p>
+</blockquote>
+<h3 id="对于G-Suite管理员"><a href="#对于G-Suite管理员" class="headerlink" title="对于G Suite管理员"></a>对于G Suite管理员</h3><p>按照<a target="_blank" rel="noopener" href="https://developers.google.com/admin-sdk/directory/v1/quickstart/python">官方步骤</a>开启 Di­rec­tory API，将生成的 json 文件保存到 cre­den­tials 文件下。<br>在<a target="_blank" rel="noopener" href="https://support.google.com/a/answer/33343?hl=en">控制面版</a>里面创建一个群组，创建好你会获得一个类似域名邮箱的地址 sa@your­do­main.com<br>利用 API 将 ser­vice ac­counts 加入 Google Groups</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 add_to_google_group.py -g sa@yourdomain.com</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>sa@yourdomain.com</code> 中的 sa 可以为你想要的任何名称。<br>如果想看参数的具体含义，直接运行 python3 ad­d_­to_­google_­group.py -h</p>
+<h3 id="对于普通Google账号"><a href="#对于普通Google账号" class="headerlink" title="对于普通Google账号"></a>对于普通Google账号</h3><p>直接创建一个 <a target="_blank" rel="noopener" href="https://groups.google.com/">Google Group</a> 然后手动地将 ser­vice ac­counts 对应的邮箱地址（可以在步骤三中的注意 2 处找到，复制下来到 ex­cel 里整理一下即可）挨个加进去。但每次只能加 10 个（以英文逗号 “,” 作为两个邮箱之间的间隔），每 24 小时只能加 100 个。<br>group 有一个邮箱地址，请牢记，接下来需要用到</p>
+<h2 id="步骤四：开始运行"><a href="#步骤四：开始运行" class="headerlink" title="步骤四：开始运行"></a>步骤四：开始运行</h2><p>你的准备工作已经全部做好。开始运行吧！</p>
+<h4 id="拷贝"><a href="#拷贝" class="headerlink" title="拷贝"></a>拷贝</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 rclone_sa_magic.py -s SourceID -d DestinationID -dp DestinationPathName -b 1 -e 600</span><br></pre></td></tr></table></figure>
+
+<p>如果想看参数的具体含义，直接运行 <code>python3 rclone_sa_magic.py -h</code><br><code>-b</code> 是你开始的 SA，<code>-e</code> 是你结束的 SA。比如我今天已经把前十个的限额用满了，那我 <code>-b 11</code> 即可。<br>每个服务账号的限额在二十四小时后重置。<br>特别地，如果想多开，请用 – p 参数给不同的复制任务指定不同的端口<br>如果发现拷贝内容明显少于源 Team Drive 里面的内容，那么你可能碰到 Bug 了，请给上运行参数再加上 <code>--disable_list_r</code><br>如果你一开始就碰到了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Failed to rc: connection failed: Post http:&#x2F;&#x2F;localhost:5572&#x2F;core&#x2F;stats: dial tcp :5572: connectex: No connection could be made because the target machine actively refused it.</span><br></pre></td></tr></table></figure>
+
+<p>那么可能是权限或者路径导致 Rclone 任务都没跑起来，请观察日志文件 log_r­clone.txt，并请先将 Au­toR­clone 目录下的 rclone.conf 复制到 Rclone 目录下，并结合如下简单命令检查出原因 <code>rclone --config rclone.conf size --disable ListR src001:</code>，<code>rclone --config rclone.conf size --disable ListR dst001:</code></p>
+<h4 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 rclone_sa_magic.py -sp YourLocalPath -d DestinationID -dp DestinationPath</span><br></pre></td></tr></table></figure>
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术分享</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网盘域名</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/31/2020-07-11-autorclone-breakthrough-limit/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2020-08-30-notes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/08/30/2020-08-30-notes/">2020年8月30日21:20:08日记</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/08/30/2020-08-30-notes/" class="archive-article-date">
+        <time datetime="2020-08-30T13:20:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-30</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>​        一周的折腾，总是完成了个人网站导航、个人笔记网站和个人博客的搭建，耗时很多，找一个能记录时间的地方，希望能坚持下去，时光留不住，能留住的只是它的痕迹。整理完搭建过程中的笔记算是初步完成了整个过程的搭建，需要开始其他的工作，增加技能学习，累计知识，垒实基础，希望后面会更好。</p>
 
     
 
@@ -407,7 +914,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">心情随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">日记本</a>
         		</li>
       		
 		</ul>
@@ -417,7 +924,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/30/2020-06-16-home/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/08/30/2020-08-30-notes/">展开全文 >></a>
     </p>
     
 
@@ -447,7 +954,7 @@
 
 
   
-    <article id="post-2011-11-04-basis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2020-08-30-cs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -455,7 +962,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/08/30/2011-11-04-basis/">关于我</a>
+	  <a class="article-title" href="/2020/08/30/2020-08-30-cs/">测试</a>
 	
     </h1>
   
@@ -463,8 +970,8 @@
 
   
   
-<a href="/2020/08/30/2011-11-04-basis/" class="archive-article-date">
-        <time datetime="2020-08-30T02:56:54.459Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-30</time>
+<a href="/2020/08/30/2020-08-30-cs/" class="archive-article-date">
+        <time datetime="2020-08-30T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-30</time>
 </a>
 
   
@@ -476,10 +983,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>弱水三千，只取一瓢饮；</p>
-<p>娇玫万朵，独摘一枝怜；</p>
-<p>满天星斗，只见一颗芒；</p>
-<p>人海茫茫，唯系你一人</p>
+    <p>测试</p>
 
     
 
@@ -506,391 +1010,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/30/2011-11-04-basis/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/28/hello-world/">Hello World</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/28/hello-world/" class="archive-article-date">
-        <time datetime="2020-08-28T14:23:18.694Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/28/hello-world/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020-8-24-Hexo-next-theme" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/28/2020-8-24-Hexo-next-theme/">Hexo 的文档</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/28/2020-8-24-Hexo-next-theme/" class="archive-article-date">
-        <time datetime="2020-08-28T14:23:18.688Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>​    <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a> 是高效的静态站点生成框架，她基于 <a target="_blank" rel="noopener" href="https://nodejs.org/">Node.js</a>。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/tag-plugins.html">标签插件</a> 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。</p>
-<p>你可以访问 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo 的文档</a> 了解如何安装 Hexo</p>
-<p>在 Hexo 中有两份主要的配置文件，其名称都是 <code>_config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
-<p>为了描述方便，在以下说明中，将前者称为 <strong>站点配置文件</strong>， 后者称为 <strong>主题配置文件</strong>。</p>
-<h2 id="安装-NexT"><a href="#安装-NexT" class="headerlink" title="安装 NexT"></a>安装 NexT</h2><p>Hexo 安装主题的方式非常简单，只需要将主题文件拷贝至站点目录的 <code>themes</code> 目录下， 然后修改下配置文件即可。具体到 NexT 来说，安装步骤如下。</p>
-<h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>如果你熟悉 <a target="_blank" rel="noopener" href="http://git-scm.com/">Git</a>， 建议你使用 克隆最新版本 的方式，之后的更新可以通过 <code>git pull</code> 来快速更新， 而不用再次下载压缩包替换。</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html#clone">克隆最新版本</a></li>
-<li><a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/getting-started.html#stable">下载稳定版本</a></li>
-</ul>
-<p>在终端窗口下，定位到 Hexo 站点目录下。使用 <code>Git</code> checkout 代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd your-hexo-site</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;iissnan&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
-
-<p>如果你对 Git 感兴趣，可以通过《Pro Git》这本书来学习。你可以访问我制作的一个 <a target="_blank" rel="noopener" href="http://iissnan.com/progit">在线版本（第一版）</a>。</p>
-<h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>与所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开 <strong>站点配置文件</strong>， 找到 <code>theme</code> 字段，并将其值更改为 <code>next</code>。</p>
-<p>启用 NexT 主题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<p>到此，NexT 主题安装完成。下一步我们将验证主题是否正确启用。在切换主题之后、验证之前， 我们最好使用 <code>hexo clean</code> 来清除 Hexo 的缓存。</p>
-<h3 id="验证主题"><a href="#验证主题" class="headerlink" title="验证主题"></a>验证主题</h3><p>首先启动 Hexo 本地站点，并开启调试模式（即加上 <code>--debug</code>），整个命令是 <code>hexo s --debug</code>。 在服务启动的过程，注意观察命令行输出是否有任何异常信息，如果你碰到问题，这些信息将帮助他人更好的定位错误。 当命令行输出中提示出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Hexo is running at http:&#x2F;&#x2F;0.0.0.0:4000&#x2F;. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
-
-<p>此时即可使用浏览器访问 <code>http://localhost:4000</code>，检查站点是否正确运行。</p>
-<p>当你看到站点的外观与下图所示类似时即说明你已成功安装 NexT 主题。这是 NexT 默认的 Scheme —— Muse</p>
-<p><img src="http://theme-next.iissnan.com/uploads/five-minutes-setup/validation-default-scheme-mac.png" alt="img"></p>
-<p>现在，你已经成功安装并启用了 NexT 主题。下一步我们将要更改一些主题的设定，包括个性化以及集成第三方服务。</p>
-<h2 id="主题设定"><a href="#主题设定" class="headerlink" title="主题设定"></a>主题设定</h2><h3 id="选择-Scheme"><a href="#选择-Scheme" class="headerlink" title="选择 Scheme"></a>选择 Scheme</h3><p>Scheme 是 NexT 提供的一种特性，借助于 Scheme，NexT 为你提供多种不同的外观。同时，几乎所有的配置都可以 在 Scheme 之间共用。目前 NexT 支持三种 Scheme，他们是：</p>
-<ul>
-<li>Muse - 默认 Scheme，这是 NexT 最初的版本，黑白主调，大量留白</li>
-<li>Mist - Muse 的紧凑版本，整洁有序的单栏外观</li>
-<li>Pisces - 双栏 Scheme，小家碧玉似的清新</li>
-</ul>
-<p>Scheme 的切换通过更改 <strong>主题配置文件</strong>，搜索 scheme 关键字。 你会看到有三行 scheme 的配置，将你需用启用的 scheme 前面注释 <code>#</code> 去除即可。</p>
-<p>选择 Pisces Scheme</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">scheme: Pisces</span><br></pre></td></tr></table></figure>
-
-<h3 id="设置-语言"><a href="#设置-语言" class="headerlink" title="设置 语言"></a>设置 语言</h3><p>编辑 <strong>站点配置文件</strong>， 将 <code>language</code> 设置成你所需要的语言。建议明确设置你所需要的语言，例如选用简体中文，配置如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">language: zh-Hans</span><br></pre></td></tr></table></figure>
-
-<p>目前 NexT 支持的语言如以下表格所示：</p>
-<table>
-<thead>
-<tr>
-<th align="left">语言</th>
-<th align="left">代码</th>
-<th align="left">设定示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">English</td>
-<td align="left"><code>en</code></td>
-<td align="left"><code>language: en</code></td>
-</tr>
-<tr>
-<td align="left">简体中文</td>
-<td align="left"><code>zh-Hans</code></td>
-<td align="left"><code>language: zh-Hans</code></td>
-</tr>
-<tr>
-<td align="left">Français</td>
-<td align="left"><code>fr-FR</code></td>
-<td align="left"><code>language: fr-FR</code></td>
-</tr>
-<tr>
-<td align="left">Português</td>
-<td align="left"><code>pt</code></td>
-<td align="left"><code>language: pt</code> or <code>language: pt-BR</code></td>
-</tr>
-<tr>
-<td align="left">繁體中文</td>
-<td align="left"><code>zh-hk</code> 或者 <code>zh-tw</code></td>
-<td align="left"><code>language: zh-hk</code></td>
-</tr>
-<tr>
-<td align="left">Русский язык</td>
-<td align="left"><code>ru</code></td>
-<td align="left"><code>language: ru</code></td>
-</tr>
-<tr>
-<td align="left">Deutsch</td>
-<td align="left"><code>de</code></td>
-<td align="left"><code>language: de</code></td>
-</tr>
-<tr>
-<td align="left">日本語</td>
-<td align="left"><code>ja</code></td>
-<td align="left"><code>language: ja</code></td>
-</tr>
-<tr>
-<td align="left">Indonesian</td>
-<td align="left"><code>id</code></td>
-<td align="left"><code>language: id</code></td>
-</tr>
-<tr>
-<td align="left">Korean</td>
-<td align="left"><code>ko</code></td>
-<td align="left"><code>language: ko</code></td>
-</tr>
-</tbody></table>
-<h3 id="设置-菜单"><a href="#设置-菜单" class="headerlink" title="设置 菜单"></a>设置 菜单</h3><p>菜单配置包括三个部分，第一是菜单项（名称和链接），第二是菜单项的显示文本，第三是菜单项对应的图标。 NexT 使用的是 <a target="_blank" rel="noopener" href="http://fontawesome.io/">Font Awesome</a> 提供的图标， Font Awesome 提供了 600+ 的图标，可以满足绝大的多数的场景，同时无须担心在 Retina 屏幕下 图标模糊的问题。</p>
-<p>编辑 <strong>主题配置文件</strong>，修改以下内容：</p>
-<ol>
-<li><p>设定菜单内容，对应的字段是 <code>menu</code>。 菜单内容的设置格式是：<code>item name: link</code>。其中 <code>item name </code>是一个名称，这个名称并不直接显示在页面上，她将用于匹配图标以及翻译。</p>
-<p>菜单示例配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F;</span><br><span class="line">  archives: &#x2F;archives</span><br><span class="line">  #about: &#x2F;about</span><br><span class="line">  #categories: &#x2F;categories</span><br><span class="line">  tags: &#x2F;tags</span><br><span class="line">  #commonweal: &#x2F;404.html</span><br></pre></td></tr></table></figure>
-
-<p>若你的站点运行在子目录中，请将链接前缀的 <code>/</code> 去掉</p>
-<p>NexT 默认的菜单项有（标注  的项表示需要手动创建这个页面）：</p>
-<table>
-<thead>
-<tr>
-<th align="left">键值</th>
-<th align="left">设定值</th>
-<th align="left">显示文本（简体中文）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">home</td>
-<td align="left"><code>home: /</code></td>
-<td align="left">主页</td>
-</tr>
-<tr>
-<td align="left">archives</td>
-<td align="left"><code>archives: /archives</code></td>
-<td align="left">归档页</td>
-</tr>
-<tr>
-<td align="left">categories</td>
-<td align="left"><code>categories: /categories</code></td>
-<td align="left">分类页</td>
-</tr>
-<tr>
-<td align="left">tags</td>
-<td align="left"><code>tags: /tags</code></td>
-<td align="left">标签页</td>
-</tr>
-<tr>
-<td align="left">about</td>
-<td align="left"><code>about: /about</code></td>
-<td align="left">关于页面</td>
-</tr>
-<tr>
-<td align="left">commonweal</td>
-<td align="left"><code>commonweal: /404.html</code></td>
-<td align="left">公益 404</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>设置菜单项的显示文本。在第一步中设置的菜单的名称并不直接用于界面上的展示。Hexo 在生成的时候将使用 这个名称查找对应的语言翻译，并提取显示文本。这些翻译文本放置在 NexT 主题目录下的 <code>languages/&#123;language&#125;.yml</code> （<code>&#123;language&#125;</code> 为你所使用的语言）。</p>
-<p>以简体中文为例，若你需要添加一个菜单项，比如 <code>something</code>。那么就需要修改简体中文对应的翻译文件 <code>languages/zh-Hans.yml</code>，在 <code>menu</code> 字段下添加一项：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: 首页</span><br><span class="line">  archives: 归档</span><br><span class="line">  categories: 分类</span><br><span class="line">  tags: 标签</span><br><span class="line">  about: 关于</span><br><span class="line">  search: 搜索</span><br><span class="line">  commonweal: 公益404</span><br><span class="line">  something: 有料</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设定菜单项的图标，对应的字段是 <code>menu_icons</code>。 此设定格式是 <code>item name: icon name</code>，其中 <code>item name</code> 与上一步所配置的菜单名字对应，<code>icon name</code> 是 Font Awesome 图标的 名字。而 <code>enable</code> 可用于控制是否显示图标，你可以设置成 <code>false</code> 来去掉图标。</p>
-<p>菜单图标配置示例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu_icons:</span><br><span class="line">  enable: true</span><br><span class="line">  # Icon Mapping.</span><br><span class="line">  home: home</span><br><span class="line">  about: user</span><br><span class="line">  categories: th</span><br><span class="line">  tags: tags</span><br><span class="line">  archives: archive</span><br><span class="line">  commonweal: heartbeat</span><br></pre></td></tr></table></figure>
-
-<p>在菜单图标开启的情况下，如果菜单项与菜单未匹配（没有设置或者无效的 Font Awesome 图标名字） 的情况下，NexT 将会使用  作为图标。</p>
-<p>请注意键值（如 <code>home</code>）的大小写要严格匹配</p>
-</li>
-</ol>
-<h3 id="设置-侧栏"><a href="#设置-侧栏" class="headerlink" title="设置 侧栏"></a>设置 侧栏</h3><p>默认情况下，侧栏仅在文章页面（拥有目录列表）时才显示，并放置于右侧位置。 可以通过修改 <strong>主题配置文件</strong> 中的 <code>sidebar</code> 字段来控制侧栏的行为。侧栏的设置包括两个部分，其一是侧栏的位置， 其二是侧栏显示的时机。</p>
-<ol>
-<li><p>设置侧栏的位置，修改 <code>sidebar.position</code> 的值，支持的选项有：</p>
-<ul>
-<li>left - 靠左放置</li>
-<li>right - 靠右放置</li>
-</ul>
-<p>目前仅 Pisces Scheme 支持 <code>position</code> 配置。影响版本<strong>5.0.0</strong>及更低版本。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  position: left</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>设置侧栏显示的时机，修改 <code>sidebar.display</code> 的值，支持的选项有：</p>
-<ul>
-<li><code>post</code> - 默认行为，在文章页面（拥有目录列表）时显示</li>
-<li><code>always</code> - 在所有页面中都显示</li>
-<li><code>hide</code> - 在所有页面中都隐藏（可以手动展开）</li>
-<li><code>remove</code> - 完全移除</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">  display: post</span><br></pre></td></tr></table></figure>
-
-<p>已知侧栏在 <code>use motion: false</code> 的情况下不会展示。 影响版本<strong>5.0.0</strong>及更低版本。</p>
-</li>
-</ol>
-<h3 id="设置-头像"><a href="#设置-头像" class="headerlink" title="设置 头像"></a>设置 头像</h3><p>编辑 <strong>主题配置文件</strong>， 修改字段 <code>avatar</code>， 值设置成头像的链接地址。其中，头像的链接地址可以是：</p>
-<table>
-<thead>
-<tr>
-<th align="left">地址</th>
-<th align="left">值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">完整的互联网 URI</td>
-<td align="left"><code>http://example.com/avatar.png</code></td>
-</tr>
-<tr>
-<td align="left">站点内的地址</td>
-<td align="left">将头像放置主题目录下的 <code>source/uploads/</code> （新建 uploads 目录若不存在） 配置为：<code>avatar: /uploads/avatar.png</code>或者 放置在 <code>source/images/</code> 目录下 配置为：<code>avatar: /images/avatar.png</code></td>
-</tr>
-</tbody></table>
-<p>头像设置示例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avatar: http:&#x2F;&#x2F;example.com&#x2F;avatar.png</span><br></pre></td></tr></table></figure>
-
-<h3 id="设置-作者昵称"><a href="#设置-作者昵称" class="headerlink" title="设置 作者昵称"></a>设置 作者昵称</h3><p>编辑 <strong>站点配置文件</strong>， 设置 <code>author</code> 为你的昵称。</p>
-<h3 id="站点描述"><a href="#站点描述" class="headerlink" title="站点描述"></a>站点描述</h3><p>编辑 <strong>站点配置文件</strong>， 设置 <code>description</code> 字段为你的站点描述。站点描述可以是你喜欢的一句签名:)</p>
-<h2 id="集成常用的第三方服务"><a href="#集成常用的第三方服务" class="headerlink" title="集成常用的第三方服务"></a>集成常用的第三方服务</h2><h3 id="百度统计"><a href="#百度统计" class="headerlink" title="百度统计"></a>百度统计</h3><p>注意： baidu_analytics 不是你的百度 id 或者 百度统计 id</p>
-<ol>
-<li>登录 <a target="_blank" rel="noopener" href="http://tongji.baidu.com/">百度统计</a>， 定位到站点的代码获取页面</li>
-<li>复制 <code>hm.js?</code> 后面那串统计脚本 id，如： <img src="http://theme-next.iissnan.com/uploads/five-minutes-setup/analytics-baidu-id.png" alt="img"></li>
-<li>编辑 <strong>主题配置文件</strong>， 修改字段 <code>baidu_analytics</code> 字段，值设置成你的百度统计脚本 id。</li>
-</ol>
-<h3 id="阅读次数统计（LeanCloud）-由-Doublemine-贡献"><a href="#阅读次数统计（LeanCloud）-由-Doublemine-贡献" class="headerlink" title="阅读次数统计（LeanCloud） 由 Doublemine 贡献"></a>阅读次数统计（LeanCloud） 由 <a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next/pull/439">Doublemine</a> 贡献</h3><p>请查看 <a target="_blank" rel="noopener" href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud">为NexT主题添加文章阅读量统计功能</a></p>
-<h3 id="Algolia-搜索"><a href="#Algolia-搜索" class="headerlink" title="Algolia 搜索"></a>Algolia 搜索</h3><p>详细的配置请参考： <a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/third-party-services.html#algolia-search">第三方服务 - Algolia</a></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">博客网站</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/28/2020-8-24-Hexo-next-theme/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/08/30/2020-08-30-cs/">展开全文 >></a>
     </p>
     
 
@@ -1088,11 +1208,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">技术分享</a>
+                <a href="javascript:void(0)" class="js-tag color5">韶华追忆</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">韶华追忆</a>
+                <a href="javascript:void(0)" class="js-tag color5">技术分享</a>
               </li>
              
               <li class="article-tag-list-item">
