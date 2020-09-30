@@ -138,8 +138,6 @@
 				
 					<a class="csdn" target="_blank" rel="noopener" href="https://blog.csdn.net/wei2314857815" title="CSDN" ><i class="icon-csdn"></i></a>
 				
-					<a class="qq" href="/img/qq.png" title="QQ" ><i class="icon-qq"></i></a>
-				
 					<a class="weixin" href="/img/weixin.png" title="wechat" ><i class="icon-weixin"></i></a>
 				
 			</div>
@@ -201,8 +199,6 @@
 			        
 						<a class="csdn" target="_blank" href="https://blog.csdn.net/wei2314857815" title="CSDN"><i class="icon-csdn"></i></a>
 			        
-						<a class="qq" target="_blank" href="/img/qq.png" title="QQ"><i class="icon-qq"></i></a>
-			        
 						<a class="weixin" target="_blank" href="/img/weixin.png" title="wechat"><i class="icon-weixin"></i></a>
 			        
 				</div>
@@ -256,7 +252,7 @@
 
 
   
-    <article id="post-2020-06-17-goindex-magic-change" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2020-07-11-autorclone-breakthrough-limit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -264,7 +260,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/09/26/2020-06-17-goindex-magic-change/">Goindex的魔改版本</a>
+	  <a class="article-title" href="/2020/09/26/2020-07-11-autorclone-breakthrough-limit/">AutoRclone教程:如何突破Google Drive每日750G限制？</a>
 	
     </h1>
   
@@ -272,8 +268,8 @@
 
   
   
-<a href="/2020/09/26/2020-06-17-goindex-magic-change/" class="archive-article-date">
-        <time datetime="2020-09-26T11:59:21.183Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-26</time>
+<a href="/2020/09/26/2020-07-11-autorclone-breakthrough-limit/" class="archive-article-date">
+        <time datetime="2020-09-26T11:59:21.195Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-26</time>
 </a>
 
   
@@ -285,16 +281,18 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p><img src="http://jiangjiawei.epizy.com/wp-content/uploads/2020/06/u3207433114120194597fm26gp0.png" alt="img"></p>
-<p><strong>GoIndex</strong>是一款部署在<strong>Cloudflare Workers</strong>的Google Drive目录索引程序，无需提供服务器，可以直接列出你谷歌网盘的所有文件，同时下载和访问也不需要挂梯子，也可以在线观看某些格式的视频文件。<br>原版Github地址：<a target="_blank" rel="noopener" href="https://github.com/donwa/goindex">https://github.com/donwa/goindex</a></p>
-<p>原版作者由于某些原因已经删库。</p>
-<p>这次主要介绍的是基于原版Goindex的一个魔改版本</p>
-<p>Github项目地址 ：<a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou">https://github.com/Aicirou/goindex-theme-acrou</a><br>此魔改版本的特色：</p>
-<p>🔐 多盘切换<br>🔐 Http Basic Auth<br>🎨 网格视图模式（文件预览）<br>🎯 分页加载<br>🌐 I18n（多国语言）<br>🛠 html渲染<br>🖥 视频在线播放(mp4,mkv,webm,flv,m3u8)<br>🚀 拥有更快的速度</p>
-<p>开发者demo <a target="_blank" rel="noopener" href="https://oss.achirou.workers.dev/">https://oss.achirou.workers.dev/</a><br>快速部署:<br>此魔改版本同样支持快速部署：<br>打开<a target="_blank" rel="noopener" href="https://goindex-quick-install.glitch.me/">https://goindex-quick-install.glitch.me</a><br>授权并获取授权码<br>将代码部署到 Cloudflare Workers<br>关于使用自己的api部署可以查阅项目介绍页的说明，由于本人较懒使用的是快速部署所以就不过多介绍了。<br>使用个人api部署好处就是安全点，高峰期也不容易爆炸。</p>
-<p>查看<a target="_blank" rel="noopener" href="https://goindex-quick-install.glitch.me/">https://goindex-quick-install.glitch.me</a>的源码<a target="_blank" rel="noopener" href="https://glitch.com/@qianqian1307">https://glitch.com/@qianqian1307</a></p>
-<p>作者: 赖小瑜<br>链接: <a target="_blank" rel="noopener" href="https://blog.likexy.me/posts/a3ab42cc/">https://blog.likexy.me/posts/a3ab42cc/</a></p>
-
+    <h2 id="AutoRclone可以干什么？"><a href="#AutoRclone可以干什么？" class="headerlink" title="AutoRclone可以干什么？"></a>AutoRclone可以干什么？</h2><p>可以方便快捷地：</p>
+<ul>
+<li>从Google Drive到Team Drive</li>
+<li>从Team Drive到Google Drive</li>
+<li>从本地到 Team Drive，</li>
+<li>从公共分享目录到 Team Drive，</li>
+<li>再或者从 Team Drive 到 Team Drive。</li>
+</ul>
+<p>换句话说，就是实现 Team Drive，Google Drive，本地之间的互拷，以及把分享的文件复制到，或者说真正地转存到自己想要的地方。</p>
+    
+    <a class="article-more-a" href="/2020/09/26/2020-07-11-autorclone-breakthrough-limit/#more">more >></a>
+    
     
 
     
@@ -312,16 +310,16 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术分享</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网盘域名</a>
+        		</li>
       		
 		</ul>
 	</div>
 
     
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/26/2020-06-17-goindex-magic-change/">展开全文 >></a>
-    </p>
     
 
     
@@ -350,7 +348,7 @@
 
 
   
-    <article id="post-2020-06-16-home" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2020-07-05-Google Drive-Treasure chest" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -358,7 +356,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/09/26/2020-06-16-home/">家，一扇展开岁月的门</a>
+	  <a class="article-title" href="/2020/09/26/2020-07-05-Google%20Drive-Treasure%20chest/">Google Drive 百宝箱</a>
 	
     </h1>
   
@@ -366,8 +364,8 @@
 
   
   
-<a href="/2020/09/26/2020-06-16-home/" class="archive-article-date">
-        <time datetime="2020-09-26T11:59:21.181Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-26</time>
+<a href="/2020/09/26/2020-07-05-Google%20Drive-Treasure%20chest/" class="archive-article-date">
+        <time datetime="2020-09-26T11:59:21.192Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-26</time>
 </a>
 
   
@@ -379,12 +377,202 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>　　每逢春节和中秋的假日，人们都喜欢赶回家与家人团聚，交通运输的任务也会突然繁忙起来。来自四面八方的人朝着自己的家奔赶去，无论列车多么拥挤，路途多么遥远，路上有多么辛苦 ，回家的信念却是十分的强烈。望着熙熙攘攘往家赶的人群，我的心中对家有种强烈的特别感觉，家，这个词在人们的心中是多么具有吸引力，父母，家人，这个词在人们心中显得是那么有人情味，家，在人们心中的份量又是多么的重。</p>
-<p>　　平日里，每当日落西山，夜幕降临时，无论是下班的大人，还是放学的小孩，也都是急切地盼望着能早点回到自己的家中，围坐在饭桌旁，和家人一起说说笑笑，吃着热气腾腾的饭菜。因为有了一个家，生活才会更有意义；有了一个家，就会让你感受到幸福的含义；有了一个家，你的学习工作事业会更加的添力。</p>
-<p>　　那些在外地的工作的人们，尽管吃住都较好，逢年过节时，总有一股“日暮乡关何处是，烟波江上使人愁”之感，倍思亲之情会从心中油然而生，因为在大地的那一边，有一个家像磁石一样地吸引着你，有一种爱——父母的爱像纽带一样牵系着你的心。亲情如水，来到父母身边，它能使心中的纷繁经过过滤变得纯净；亲情似火，来到父母身边，它能使你平淡的生活里增添温暖；亲情是诗，来到父母身边，它能使你乏味的生活经过父母的笑容和唠叨达到一种意境。父母的爱，家人的亲情，是生命永恒的动力。</p>
-<p>　　和家人相处、亲切、平淡、凡庸、琐碎、还带有鸡毛蒜皮的世俗意味，它虽缺少朋友之间那种高山流水，也没有哥们之间意气激荡、豪迈与奔放，它更缺少那种与异性交往中那种温馨旖旎，它当不得饮食中的山珍海味，但它却如同米饭、青菜、豆腐、虽普通却很耐久，它也没有白酒那样的烈性，能使人血脉贲张，更没有红、白葡萄酒那般美艳、清冽，但它却像平和醇厚的米酒那样朴实甘甜，润人心田，和家人在一起是平凡而有滋味的一种天伦之乐。</p>
-<p>　　如果家人出门不在家了，冷清的家就不复诱人。此时，人就会变得散漫，像只没头苍蝇，胡乱地打发着日子，无所归依。虽说家人不一定和你最为相知，然而往往与你休戚与共，你的好与坏，直接影响着家人的情绪，最为发自内心的关心也来自家人，在你失意和满身创伤时，唯一接纳你的，可能就是你的父母和家人。家人之间能彼此分担着痛苦与烦恼，能彼此分享快乐与成功，如果家人站在了你的身后，此时你就会无所畏惧，鼓起战胜困难的勇气。</p>
-<p>　　难怪每年的春节中秋等节假日，交通运输会有这等的繁忙，因为外面的人们要回去与家人团聚，要向家人和父母倾诉在外的酸甜苦辣，要与家人分享幸福和成功。家是生命成长的根，忙忙碌碌，尝尽风雪的心，只有在家的感化下，才能转化成宁静、祥和之美，才会泰然淡泊，从微苦的岁月里品味出香甜和温馨。这种美是柔和的欢悦的，绵远而悠远的。因为在家能看见与爱人相拥时的热泪，见到双亲微驼的背影，一扇家门展开的岁月，铺就和注定着我们一生的结局。</p>
+    <p><img src="http://jiangjiawei.epizy.com/wp-content/uploads/2020/06/u3207433114120194597fm26gp0.png" alt="img"></p>
+<p>原项目地址：<a target="_blank" rel="noopener" href="https://github.com/iwestlin/gd-utils">gd-utils</a></p>
+<p>转载:<a target="_blank" rel="noopener" href="https://www.ikarosone.top/archives/195.html">ikarosone</a></p>
+<h3 id="功能简介-原文"><a href="#功能简介-原文" class="headerlink" title="功能简介(原文)"></a>功能简介(原文)</h3><h5 id="本工具目前支持以下功能："><a href="#本工具目前支持以下功能：" class="headerlink" title="本工具目前支持以下功能："></a>本工具目前支持以下功能：</h5><ul>
+<li><p>统计任意（您拥有相关权限的，下同，不再赘述）目录的文件信息，且支持以各种形式（html, table, json）导出。<br>支持中断恢复，且统计过的目录（包括其所有子孙目录）信息会记录在本地数据库文件中（gdurl.sqlite） 请在本项目目录下命令行输入 <em>./count -h</em> 查看使用帮助</p>
+</li>
+<li><p>拷贝任意目录所有文件到您指定目录，同样支持中断恢复。 支持根据文件大小过滤，可输入 <em>./copy -h</em> 查看使用帮助</p>
+</li>
+<li><p>对任意目录进行去重，删除同一目录下的md5值相同的文件（只保留一个），删除空目录。 命令行输入 <em>./dedupe -h</em> 查看使用帮助</p>
+</li>
+<li><p>在 config.js 里完成相关配置后，可以将本项目部署在（可正常访问谷歌服务的）服务器上，提供 http api 文件统计接口</p>
+</li>
+<li><p>支持 telegram bot，配置完成后，上述功能均可通过 bot 进行操作</p>
+    
+    <a class="article-more-a" href="/2020/09/26/2020-07-05-Google%20Drive-Treasure%20chest/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术分享</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网盘域名</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2020-07-05-build-ssr-ss" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/09/26/2020-07-05-build-ssr-ss/">搭建SSR-SS服务器教程</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/09/26/2020-07-05-build-ssr-ss/" class="archive-article-date">
+        <time datetime="2020-09-26T11:59:21.190Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-26</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p><img src="http://jiangjiawei.epizy.com/wp-content/uploads/2020/07/images.png" alt="img"></p>
+<p><img src="https://ae01.alicdn.com/kf/Hf62b13c4369e431d8cb44fa2f239760da.png" alt="img"></p>
+<h3 id="自己搭建ss-ssr教程很简单，整个教程分三步："><a href="#自己搭建ss-ssr教程很简单，整个教程分三步：" class="headerlink" title="自己搭建ss/ssr教程很简单，整个教程分三步："></a>自己搭建ss/ssr教程很简单，整个教程分三步：</h3><ul>
+<li><p>第一步：购买VPS服务器</p>
+</li>
+<li><p>第二步：一键部署VPS服务器</p>
+</li>
+<li><p>第三步：一键加速VPS服务器</p>
+    
+    <a class="article-more-a" href="/2020/09/26/2020-07-05-build-ssr-ss/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">技术分享</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">科学上网</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-2020-06-23-note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/09/26/2020-06-23-note/">2020-06-23心情随笔</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/09/26/2020-06-23-note/" class="archive-article-date">
+        <time datetime="2020-09-26T11:59:21.187Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-26</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>给生命一个微笑，用微笑面对人生。就如苍鹰自信地去搏击长空，就如河流欢快着去融入大海，我们的生活将因微笑而美丽，人生将因微笑而成功。</p>
 
     
 
@@ -410,10 +598,6 @@
     
 
     
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/26/2020-06-16-home/">展开全文 >></a>
-    </p>
-    
 
     
     <div class="clearfix"></div>
@@ -441,7 +625,7 @@
 
 
   
-    <article id="post-2011-11-04-basis" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2020-06-20-time-management-method" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -449,7 +633,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/09/26/2011-11-04-basis/">关于我</a>
+	  <a class="article-title" href="/2020/09/26/2020-06-20-time-management-method/">时间管理方法</a>
 	
     </h1>
   
@@ -457,8 +641,8 @@
 
   
   
-<a href="/2020/09/26/2011-11-04-basis/" class="archive-article-date">
-        <time datetime="2020-09-26T11:59:21.178Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-26</time>
+<a href="/2020/09/26/2020-06-20-time-management-method/" class="archive-article-date">
+        <time datetime="2020-09-26T11:59:21.185Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-26</time>
 </a>
 
   
@@ -470,11 +654,11 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>弱水三千，只取一瓢饮；</p>
-<p>娇玫万朵，独摘一枝怜；</p>
-<p>满天星斗，只见一颗芒；</p>
-<p>人海茫茫，唯系你一人</p>
-
+    <p><img src="http://jiangjiawei.epizy.com/wp-content/uploads/2020/06/flowers-5229022_640.jpg" alt="img"></p>
+<p>时间管理方法：<br>1、时间规划本</p>
+    
+    <a class="article-more-a" href="/2020/09/26/2020-06-20-time-management-method/#more">more >></a>
+    
     
 
     
@@ -490,7 +674,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">韶华追忆</a>
         		</li>
       		
 		</ul>
@@ -498,182 +682,6 @@
 
     
 
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/09/26/2011-11-04-basis/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020-08-30-notes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/30/2020-08-30-notes/">2020年8月30日21:20:08日记</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/30/2020-08-30-notes/" class="archive-article-date">
-        <time datetime="2020-08-30T13:20:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-30</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>​        一周的折腾，总是完成了个人网站导航、个人笔记网站和个人博客的搭建，耗时很多，找一个能记录时间的地方，希望能坚持下去，时光留不住，能留住的只是它的痕迹。整理完搭建过程中的笔记算是初步完成了整个过程的搭建，需要开始其他的工作，增加技能学习，累计知识，垒实基础，希望后面会更好。</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">日记本</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/30/2020-08-30-notes/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2020-08-30-cs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/30/2020-08-30-cs/">测试</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/30/2020-08-30-cs/" class="archive-article-date">
-        <time datetime="2020-08-30T07:30:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-30</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>测试</p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其他</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/30/2020-08-30-cs/">展开全文 >></a>
-    </p>
     
 
     
@@ -704,7 +712,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">« Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next »</a>
     </nav>
   
 
