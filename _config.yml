@@ -14,7 +14,7 @@ title: 蒋家威的博客
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 #url: https://jiangjiawei520.github.io/person_blog.github.io
 #root: /person_blog.github.io/
-url: https://bk.jiang7zzz.xyz
+url: https://bk.jiang7zzz.tk
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
